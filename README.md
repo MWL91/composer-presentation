@@ -100,9 +100,42 @@ class PackageServiceProvider extends ServiceProvider
 }
 ```
 
-2. Defining and loading migrations and factories
-3. Configuration settings
-3. Publishing files form library
+#### Defining and loading migrations and factories
+
+See branch: stage/4
+
+```php
+$this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+```
+
+All migrations will be now running from `./database/migrations` directory.
+
+#### Configuration setup
+
+Into your Service provider add 
+
+```php
+$this->mergeConfigFrom(
+    __DIR__ . '/config.php', 'presentation'
+);
+```
+
+Your config will be available under `config("presentation.KEY")`.
+
+#### Publishing files form library
+
+See branch: stage/5
+
+In final, we should also tell laravel, that this files may be also overwritten after publish.
+
+To do that, add publishes method with array with key as file and value as publish destination.
+
+```php
+$this->publishes([
+     __DIR__ . '/config.php' => config_path('presentation.php')
+], 'presentation');
+```
+
 4. Orchestra testbench as testing framework
 
 ## How to use packages
