@@ -46,13 +46,28 @@ Add your package namespaces to composer for example
 "autoload": {
     "psr-4": {
         "Escola\\Presentation\\": "src",
-        "Escola\\Presentation\\": "tests",
+        "Escola\\Presentation\\Tests\\": "tests",
         "Database\\Factories\\Escola\\Presentation\\Models\\": "database/factories"
     }
 },
 ```
 
-3. phpunit configuration
+And create dirs:
+
+```
+mkdir ./src
+mkdir ./tests
+mkdir -p ./database/factories
+```
+
+## How to write Laravel package
+See branch: stage/3
+
+1. Defining ServiceProvider
+2. Defining and loading migrations and factories
+3. Configuration settings
+3. Publishing files form library
+4. Orchestra testbench as testing framework
 
 ## How to use packages
 
@@ -60,10 +75,4 @@ Add your package namespaces to composer for example
 2. git link
 3. packagist
 
-## How to write Laravel package
 
-1. Defining ServiceProvider
-2. Defining and loading migrations and factories
-3. Configuration settings
-3. Publishing files form library
-4. Orchestra testbench as testing framework

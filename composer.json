@@ -1,20 +1,27 @@
 {
-    "name": "escola/presentation",
-    "description": "Example package",
-    "type": "package",
-    "require": {
-        "php": ">=7.4",
-        "laravel/framework": ">=7.0"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "^9.0",
-        "orchestra/testbench": ">=5.0"
-    },
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Marcin Lenkowski",
-            "email": "marcin@lenkowski.net"
-        }
-    ]
+  "name": "escola/presentation",
+  "description": "Example package",
+  "type": "package",
+  "require": {
+    "php": ">=7.4",
+    "laravel/framework": ">=7.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.0",
+    "orchestra/testbench": ">=5.0"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Marcin Lenkowski",
+      "email": "marcin@lenkowski.net"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Escola\\Presentation\\": "src",
+      "Escola\\Presentation\\Tests\\": "tests",
+      "Database\\Factories\\Escola\\Presentation\\Models\\": "database/factories"
+    }
+  }
 }
