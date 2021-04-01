@@ -1,1 +1,1 @@
-C:37:"PHPUnit\Runner\DefaultTestResultCache":138:{a:2:{s:7:"defects";a:0:{}s:5:"times";a:1:{s:78:"Escola\Presentation\Tests\Features\AttachmentTest::test_that_true_is_not_false";d:0.235;}}}
+C:37:"PHPUnit\Runner\DefaultTestResultCache":311:{a:2:{s:7:"defects";a:1:{s:73:"Escola\Presentation\Tests\Features\AttachmentTest::test_that_config_works";i:3;}s:5:"times";a:2:{s:78:"Escola\Presentation\Tests\Features\AttachmentTest::test_that_true_is_not_false";d:0.19;s:73:"Escola\Presentation\Tests\Features\AttachmentTest::test_that_config_works";d:0.008;}}}

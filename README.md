@@ -253,10 +253,30 @@ like standard Laravel test can give us.
 
 See branch stage/9
 
-## How to use packages
+For example let's add new test:
 
+```php
+public function test_that_config_works(): void
+{
+    $this->assertEquals('example', config('presentation.test'));
+}
+```
+
+And run it - we will not have valid result, but config function is known to our test.
+
+What we should do to make it works, it's register information, similar to `testbench.yaml`.
+
+```php
+protected function getPackageProviders($app)
+{
+    return [\Escola\Presentation\PackageServiceProvider::class];
+}
+```
+
+And add `test` key into config.php array with value `example`. Then run `phpunit`, and it will pass.
+
+## How to use packages
 1. path including
 2. git link
 3. packagist
-
 
