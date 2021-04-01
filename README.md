@@ -136,7 +136,40 @@ $this->publishes([
 ], 'presentation');
 ```
 
-4. Orchestra testbench as testing framework
+### Orchestra testbench as testing framework
+
+See branch: stage/6
+
+You already install testbench, but now let's try to use it.
+
+`php ./vendor/bin/testbench` will prompt you with all available commands, like migrations, routes and much more.
+
+For example, you can create migration for your package using:
+
+```
+php ./vendor/bin/testbench make:migration create_example_table --path=./database/migrations --realpath
+```
+
+Adding `path` and `realpath` parameters are required - 
+otherwise migration will be created under `./vendor/orchestra/testbench-core/laravel/database`
+
+All the documentation you can find here: https://packages.tools/testbench/getting-started/introduction.html
+
+Let's add some columns to our migration.
+
+```php
+Schema::create('example', function (Blueprint $table) {
+    $table->id();
+    $table->string('name');
+    $table->bool('status');
+    $table->timestamps();
+});
+```
+
+And migrate it with `php ./vendor/bin/testbench migrate`. 
+It will not give us any error, but in fact none migrations will be executed.
+
+To do that, lets try to configure testbench.
 
 ## How to use packages
 
