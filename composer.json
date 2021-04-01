@@ -23,5 +23,12 @@
       "Escola\\Presentation\\Tests\\": "tests",
       "Database\\Factories\\Escola\\Presentation\\Models\\": "database/factories"
     }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Escola\\Presentation\\PackageServiceProvider"
+      ]
+    }
   }
 }

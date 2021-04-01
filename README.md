@@ -63,7 +63,43 @@ mkdir -p ./database/factories
 ## How to write Laravel package
 See branch: stage/3
 
-1. Defining ServiceProvider
+### Defining ServiceProvider
+
+#### Add Extra Composer key
+
+```
+"extra": {
+    "laravel": {
+        "providers": [
+            "Escola\\Presentation\\PackageServiceProvider"
+        ]
+    }
+}
+```
+
+#### Create PackageServiceProvider class
+
+Create class that extends `Illuminate\Support\ServiceProvider` and contains methods register and boot
+
+```php
+namespace Escola\Presentation;
+
+use Illuminate\Support\ServiceProvider;
+
+class PackageServiceProvider extends ServiceProvider
+{
+    public function register()
+    {
+
+    }
+
+    public function boot()
+    {
+        
+    }
+}
+```
+
 2. Defining and loading migrations and factories
 3. Configuration settings
 3. Publishing files form library
