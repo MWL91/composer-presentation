@@ -200,6 +200,59 @@ after run
 
 we will have sqlite database with example table.
 
+#### Write any tests
+See branch: stage/8
+
+Writing tests on packages is also easy and not required laravel bootstrap from app file.
+Let's create some test using orchestra.
+
+First, let's define our phpunit configuration.
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit backupGlobals="false"
+         backupStaticAttributes="false"
+         bootstrap="vendor/autoload.php"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnFailure="false">
+    <testsuite name="Presentation package">
+        <directory suffix="Test.php">./tests</directory>
+    </testsuite>
+    <php>
+        <env name="APP_KEY" value="AckfSECXIvnK5r28GVIWUAxmbBSjTsmF"/>
+        <env name="DB_CONNECTION" value="sqlite"/>
+        <env name="DB_DATABASE" value="{ABSOLUTE_PATH}/db.sqlite"/>
+    </php>
+</phpunit>
+```
+
+And create example test:
+
+```php
+<?php
+
+namespace Escola\Presentation\Tests\Features;
+
+use Orchestra\Testbench\TestCase;
+
+class AttachmentTest extends TestCase
+{
+    public function test_that_true_is_not_false(): void
+    {
+        $this->assertTrue(!false);
+    }
+}
+```
+
+Now, this example test could be written in PHPUnit Test case, but Orchestra can give us a little more options, 
+like standard Laravel test can give us.
+
+See branch stage/9
+
 ## How to use packages
 
 1. path including
