@@ -161,7 +161,7 @@ Let's add some columns to our migration.
 Schema::create('example', function (Blueprint $table) {
     $table->id();
     $table->string('name');
-    $table->bool('status');
+    $table->boolean('status');
     $table->timestamps();
 });
 ```
@@ -170,6 +170,35 @@ And migrate it with `php ./vendor/bin/testbench migrate`.
 It will not give us any error, but in fact none migrations will be executed.
 
 To do that, lets try to configure testbench.
+
+#### Configure test environment
+See branch: stage/7
+
+To use our own configuration for database for example, we need to use `testbench.yaml` file.
+
+```yaml
+env:
+  - DB_CONNECTION="sqlite"
+  - DB_DATABASE="{ABSOLUTE_PATH}/db.sqlite"
+
+providers:
+  - Escola\Presentation\PackageServiceProvider
+```
+
+Adding provider to `testbench.yaml` is important - otherwise you will run declared migrations.
+
+Also let's create db.sqlite in our directory.
+```bash
+touch ~/code/composer-presentation/db.sqlite
+```
+
+after run
+
+```
+./vendor/bin/testbench migrate
+```
+
+we will have sqlite database with example table.
 
 ## How to use packages
 

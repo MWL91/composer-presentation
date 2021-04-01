@@ -1,0 +1,6 @@
+env:
+  - DB_CONNECTION="sqlite"
+  - DB_DATABASE="/Users/marcinlenkowski/code/composer-presentation/db.sqlite"
+
+providers:
+  - Escola\Presentation\PackageServiceProvider

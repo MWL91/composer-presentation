@@ -16,7 +16,7 @@ class CreateExampleTable extends Migration
         Schema::create('example', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->bool('status');
+            $table->boolean('status');
             $table->timestamps();
         });
     }
